@@ -1,7 +1,6 @@
 from typing import Any, Dict
 
 roll: int = 1
-
 def add(base: Dict[int, Dict[str, Any]]) -> None:
     global roll
     name: str = input("Enter the name of the student: ")
@@ -11,8 +10,6 @@ def add(base: Dict[int, Dict[str, Any]]) -> None:
     base[roll] = {'Name': name, 'Age': age, 'Marks': number}
     print(f"Student added with roll number: {roll}")
     roll += 1
-
-
 def update(base: Dict[int, Dict[str, Any]]) -> None:
     roll_number: int = int(input("Enter the roll number of the student to update: "))
     if roll_number in base:
@@ -23,17 +20,14 @@ def update(base: Dict[int, Dict[str, Any]]) -> None:
         print(f"Student record for roll number {roll_number} updated.")
     else:
         print("Student not found.")
-
 def retrieve(base: Dict[int, Dict[str, Any]]) -> None:
     roll_number: int = int(input("Enter the roll number of the student to retrieve: "))
     if roll_number in base:
         print(f"Record for roll number {roll_number}: {base[roll_number]}")
     else:
         print("Student not found.")
-
 def main() -> None:
     base: Dict[int, Dict[str, Any]] = {}
-    
     while True:
         print("\nMenu:")
         print("1. Add Student")
@@ -41,9 +35,7 @@ def main() -> None:
         print("3. Retrieve Student")
         print("4. Display All Students")
         print("5. Exit")
-        
         choice: int = int(input("Enter your choice: "))
-        
         if choice == 1:
             add(base)
         elif choice == 2:
