@@ -2,8 +2,7 @@ import re
 
 from typing import Literal, LiteralString,Any
 
-def is_palindrome(sentence):
-    # Remove non-alphabetic characters and convert to lowercase
+def is_palindrome(sentence) -> bool:
     clean_sentence = re.sub(r'[^A-Za-z]', '', sentence).lower()
     return clean_sentence == clean_sentence[::-1]
 
